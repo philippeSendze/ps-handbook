@@ -10,6 +10,10 @@ Here I store personal documentations or links to websites about some of the tech
 ### HTML, CSS, JS
 - [Technologies web pour développeurs](https://developer.mozilla.org/fr/docs/Web)
 - [Flexbox Froggy](https://flexboxfroggy.com/)
+- [HTML5 Notes For Professionals](https://goalkicker.com/HTML5Book/)
+- [CSS Notes For Professionals](https://goalkicker.com/CSSBook/)
+- [Javascript Notes For Professionals](https://goalkicker.com/JavaScriptBook/)
+- [Bootstrap official documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ### PHP
 - [PHP W3Schools](https://www.w3schools.com/php/default.asp)
@@ -30,6 +34,8 @@ Here I store personal documentations or links to websites about some of the tech
 - [Official website of React](https://react.dev/)
 - [React Notes For Professionals](https://goalkicker.com/ReactBook/)
 - [Web Dev Simplified](https://www.youtube.com/c/WebDevSimplified)
+- [Material UI official documentation](https://mui.com/material-ui/getting-started/)
+- [React-Bootstrap official documentation](https://react-bootstrap.netlify.app/docs/getting-started/introduction)
 
 ### Symfony
 - [Symfony OpenClassrooms](https://openclassrooms.com/search?query=symfony)
