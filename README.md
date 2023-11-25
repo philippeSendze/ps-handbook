@@ -1,4 +1,4 @@
-# PS-Handbook
+# Tech-Handbook
 Here I store personal documentations or links to websites about some of the technologies I have experience with. They can be in french or in english.
 
 ## Web
