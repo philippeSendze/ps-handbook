@@ -5,7 +5,6 @@ Here I store personal documentations or links to websites about some of the tech
 ### Generally
 - [Openclassrooms](https://openclassrooms.com)
 - [W3Schools](https://www.w3schools.com/)
-- [Web Dev Cody](https://www.youtube.com/@WebDevCody)
 - [Notes For Professionals](https://goalkicker.com/)
   
 ### HTML, CSS, JS
