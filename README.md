@@ -26,6 +26,7 @@ Here I store personal documentations or links to websites about some of the tech
 ### SQL
 - [SQL W3Schools](https://www.w3schools.com/sql/default.asp)
 - [SQL Notes For Professionals](https://goalkicker.com/SQLBook/)
+- [Cours et tutoriels sur le langage SQL](https://sql.sh/)
 
 ### React
 - [Débutez avec React](https://openclassrooms.com/fr/courses/7008001-debutez-avec-react)
