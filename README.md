@@ -35,6 +35,7 @@ Here I store personal documentations or links to websites about some of the tech
 - [Official website of React](https://react.dev/)
 - [React Notes For Professionals](https://goalkicker.com/ReactBook/)
 - [Web Dev Simplified](https://www.youtube.com/c/WebDevSimplified)
+- [Cosden Solutions](https://www.youtube.com/@cosdensolutions)
 - [Material UI official documentation](https://mui.com/material-ui/getting-started/)
 - [React-Bootstrap official documentation](https://react-bootstrap.netlify.app/docs/getting-started/introduction)
 
