@@ -1,0 +1,10 @@
+DJANGO
+
+alias penv='source ENV/Scripts/activate'
+alias pmanage='python manage.py'
+alias pserver='python manage.py runserver'
+alias pinspect='python manage.py inspectdb'
+
+
+PHP
+alias phpserver = 'php -S localhost'
