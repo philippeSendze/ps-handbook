@@ -7,4 +7,4 @@ alias pinspect='python manage.py inspectdb'
 
 
 PHP
-alias phpserver = 'php -S localhost'
+alias phpserver8080 = 'php -S localhost:8080'
