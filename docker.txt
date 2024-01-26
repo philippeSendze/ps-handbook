@@ -1,0 +1,90 @@
+---------- Instructions fondamentales ------------
+
+docker images 
+# Pour voir la liste des images Docker sur notre machine
+
+docker ps
+# Voir la liste des conteneurs lancés sur notre machine
+
+docker pull example_container
+# Récupérer le conteneur 'example_container' sur le Docker Hub
+
+docker run -it example_container
+# Lancer le conteneur "example_container" en mode interactif
+Options :
+- '-d' pour le lancer en arrière-plan, c-à-dire le détacher du processus principal de la console
+- '-p' pour définir l'utilisation de port (exemple: docker run -d -p 8080:80 nginx)
+
+docker stop EXAMPLE_CONTAINER_ID
+# Arrêter le conteneur "example_container" (toujours disponible en lançant 'docker ps -a')
+
+docker exec -ti EXAMPLE_CONTAINER_ID bash
+# Obtenir un shell qui nous permettra d'entrer dans les fichiers du conteneur
+
+docker rm EXAMPLE_CONTAINER_ID
+# Détruire le conteneur et son contenu
+
+docker system prune
+# Nettoyer le système
+
+
+------- Dockerfile ------
+
+I] Exemple basique 
+
+1) mkdir docker-example
+2) cd docker-example
+3) touch Dockerfile
+4) Dans le fichier Dockerfile, écrire :
+"
+FROM alpine:3.14
+
+CMD ["echo", "Hello world"]
+"
+5) Dans le même dossier, lancer : docker build -t mon_image .
+6) docker run mon_image
+
+Résultat : 'Hello world' affiché dans la console.
+
+N.B: L'instruction 'FROM' n'est utilisable qu'une fois dans le Dockerfile
+
+II] Lancement d'un conteneur personnalisé
+
+1- 'RUN' sert à exécuter une commande dans le conteneur. A limiter au maximum, afin de limiter le nombre de couches (layers) et donc de réduire la taille de notre image Docker.
+2- 'ADD' sert à copier ou télécharger des fichiers dans notre image.
+3- 'WORKDIR' sert à modifier le répertoire courant. C'est l'équivalent de la commande 'cd' en ligne de commande.
+4- 'EXPOSE' permet d'indiquer le port sur lequel votre application écoute
+5- 'VOLUME' permet d'indiquer quel répertoire vous voulez partager avec votre host.
+6- 'CMD' permet à notre conteneur de savoir quelle commande il doit exécuter lors de son démarrage.
+
+N.B: EXPOSE et VOLUME ne sont pas nécessaires au bon fonctionnement de notre image Docker
+
+Exemple de Dockerfile :
+"
+FROM ubuntu:22.04
+
+RUN apt-get update \
+   && echo Y | apt install curl \
+   && curl -fsSL -N https://deb.nodesource.com/setup_21.x | bash - && \ 
+   apt-get install -y nodejs \
+   && apt-get clean -y
+
+ADD . /app/
+WORKDIR /app
+RUN npm install
+
+EXPOSE 2368
+VOLUME /app/logs
+
+CMD npm run start
+"
+
+On ajoute aussi un .dockerignore :
+"
+node_modules
+.git
+"
+Un docker-compose.yml est aussi utile pour définir le nom du conteneur
+
+
+Un exemple : https://www.freecodecamp.org/news/how-to-dockerize-a-react-application/
