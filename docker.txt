@@ -86,5 +86,14 @@ node_modules
 "
 Un docker-compose.yml est aussi utile pour définir le nom du conteneur
 
+Un exemple plus détaillé avec une image Docker : https://www.freecodecamp.org/news/how-to-dockerize-a-react-application/
 
-Un exemple : https://www.freecodecamp.org/news/how-to-dockerize-a-react-application/
+
+-------------- Docker Compose -------------
+
+'docker-compose up -d' permet de démarrer l'ensemble des conteneurs en arrière-plan ;
+'docker-compose ps' permet de voir le statut de l'ensemble de la stack ;
+'docker-compose logs -f --tail 5' permet d'afficher les logs de votre stack ;
+'docker-compose stop' permet d'arrêter l'ensemble des services d'une stack ;
+'docker-compose down' permet de détruire l'ensemble des ressources d'une stack ;
+'docker-compose config' permet de valider la syntaxe de votre fichier docker-compose.yml .
