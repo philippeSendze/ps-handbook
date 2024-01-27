@@ -6,23 +6,26 @@ docker images
 docker ps
 # Voir la liste des conteneurs lancés sur notre machine
 
-docker pull example_container
-# Récupérer le conteneur 'example_container' sur le Docker Hub
+docker pull example_image
+# Récupérer l'image 'example_container' sur le Docker Hub
 
-docker run -it example_container
-# Lancer le conteneur "example_container" en mode interactif
+docker run -it example_image
+# Lancer le conteneur qui a pour image "example_container" en mode interactif
 Options :
 - '-d' pour le lancer en arrière-plan, c-à-dire le détacher du processus principal de la console
 - '-p' pour définir l'utilisation de port (exemple: docker run -d -p 8080:80 nginx)
 
 docker stop EXAMPLE_CONTAINER_ID
-# Arrêter le conteneur "example_container" (toujours disponible en lançant 'docker ps -a')
+# Arrêter le conteneur dont l'ID est EXAMPLE_CONTAINER_ID ('docker ps' pour voir les conteneurs lancés)
 
 docker exec -ti EXAMPLE_CONTAINER_ID bash
-# Obtenir un shell qui nous permettra d'entrer dans les fichiers du conteneur
+# Obtenir un shell qui nous permettra d'entrer dans les fichiers du conteneur 
 
 docker rm EXAMPLE_CONTAINER_ID
-# Détruire le conteneur et son contenu
+# Détruire le conteneur et son contenu (les conteneurs à l'arrêt sont toujours disponibles en lançant 'docker ps -a')
+
+docker image rm IMAGE_NAME
+# Supprimer une image (s'assurer que les conteneurs utilisant l'image sont supprimés)
 
 docker system prune
 # Nettoyer le système
@@ -113,7 +116,7 @@ Eléments d'un fichier docker-compose.yml (ou .yaml)
 
 - 'ports' qui permet de définir les ports disponibles entre la machine host et le conteneur.
 
-Exemple :
+Exemple 1 :
 "
 version: "3"
 
@@ -144,6 +147,36 @@ services:
 
 volumes:
   db_data: {}
+"
+
+Exemple 2 (dockerfacile/app est une image sur Docker Hub qui dépend de Redis):
+"
+version: "3"
+services:
+  redis:
+    image: redis
+  api:
+    image: dockerfacile/app
+    environment:
+      - starwars=1
+    depends_on:
+      - redis
+"
+
+Exemple 3 ('your_image_name' est une image locale): 
+"
+version: "3"
+services:
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+  api:
+    image: your_image_name
+    ports:
+      - 5000:5000
+    depends_on:
+      - redis
 "
 
 
