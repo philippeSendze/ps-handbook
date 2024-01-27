@@ -97,3 +97,16 @@ Un exemple plus détaillé avec une image Docker : https://www.freecodecamp.org/
 'docker-compose stop' permet d'arrêter l'ensemble des services d'une stack ;
 'docker-compose down' permet de détruire l'ensemble des ressources d'une stack ;
 'docker-compose config' permet de valider la syntaxe de votre fichier docker-compose.yml .
+
+
+--------------- Ubuntu ------------------
+S'il y a un problème de permission "sudo" (c'est-à-dire qu'aucune commande ne se lance sans préciser le "sudo") :
+
+sudo groupadd docker
+# Créer le groupe docker
+
+sudo usermod -aG docker ${USER}
+# Ajouter son utilisateur au groupe docker
+
+su - ${USER}
+# Pour passer en mode superutilisateur et nous mettre sur le chemin de l'utilisateur USER
