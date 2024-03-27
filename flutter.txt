@@ -1,0 +1,4 @@
+flutter devices -> lister les devices dispo
+flutter emulators -> lister les emulators dispo
+flutter run lib/main.dart -d emulator-5554 -> lancer l'application sur l'emulator démarré
+flutter emulators --launch <emulator_id> -> lancer un emulator
